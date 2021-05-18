@@ -1,0 +1,173 @@
+//импорт файла
+@import 'nullstyle.scss';
+
+@mixin font($font_name, $file_name, $weight, $style) {
+    @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+    }
+    }
+
+@import "fonts";
+
+$colorLeft: rgb(140, 162, 196); 
+
+.wraper{
+    min-height: 100vh;
+    overflow: hidden;
+}
+    
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+   // border: rgb(65, 66, 146) 2px solid;
+    display: flex;
+    //flex-wrap: wrap;
+}
+
+.leftBar{
+   // border: hotpink 2px solid;
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $colorLeft;
+
+}
+
+.photo{
+    max-width: 300px;
+    margin-bottom: 16px;
+    border-bottom: rgb(174, 209, 240) solid 2px;
+}
+
+.leftBarItem{
+    // border: rgb(133, 105, 255) 2px solid;
+    width: 100%;
+    max-width: 300px;
+    padding: 8px 8px 4px 8px;
+    background-color: $colorLeft;
+    color: honeydew;
+    margin-bottom: 12px;
+    border-bottom: rgb(174, 209, 240) solid 2px;
+    &__row{
+        margin: 12px 8px;
+        // border: green 1px solid;
+        &_title{
+            h1{
+                font-size: 24px;
+            }
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        &_subtitle{
+            font-size: 16px;
+            text-align: center;
+            margin-top: 4px;
+            margin-bottom: 32px;
+        }
+        &_ul{
+            
+            li{
+               margin-bottom: 8px;
+              
+             
+               img{
+                   //width: 28px;
+                   height: 28px;
+                   border-radius: 50%;
+                   margin-right: 8px;
+               }
+            }
+        }
+    }
+}
+
+.contacts{
+    li{
+        span{
+        display: inline-block;
+        margin-top: 10px;
+        }
+    }
+}
+
+.skills{
+    li{
+        margin-bottom: 20px;
+    }
+    .leftBarItem__row_title{
+        margin-bottom: 32px;
+    }
+}
+
+.rightBar{
+   // border: cornflowerblue 2px solid;
+    max-width: 900px;
+    flex: 1 1 auto;
+    padding: 8px;
+    background-color: rgb(219, 219, 233);
+    
+}
+.rightBarItem{
+    font-size: 20px;
+    padding-top: 16px;
+    padding-left: 24px;
+    padding-bottom: 16px;
+    border-bottom: rgb(174, 209, 240) solid 2px;
+    
+    &__title{
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 24px;
+        color: rgb(24, 131, 180);
+    }
+    ul{
+        margin-left: 64px;
+        margin-bottom: 16px;
+        //margin-top: -16px;
+    }
+    &__text{
+       &_mar{
+           padding-left: 45px;
+           margin-bottom: 16px;
+       }
+          
+       
+    }
+    span{
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+.ico{
+   // background-color: white;
+    border: 1px solid white;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url(../img/ic1.jpg) no-repeat center;
+}
+
+@media(max-width:800px){
+    
+    .container{
+        flex-wrap: wrap;
+    }
+
+    .leftBar{
+       flex: 1 1 100%;
+    }
+    .rightBar{
+      flex: 1 1 100%;
+    }
+    
+}
